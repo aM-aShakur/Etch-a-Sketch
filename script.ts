@@ -1,5 +1,10 @@
+// create a button that prompts the user
+// prompt determines the size of the grid
+
 const button: HTMLElement = document.createElement('button')
 
+// get prompt from user
+// grid size can be anywhere between 1 - 50
 function howMany() {
     const number: string | null  = prompt("Give a number to determine the scale.")
     
@@ -10,6 +15,8 @@ function howMany() {
     return Number(number)
 }
 
+// add the func howMany to button
+// add the button to the dom
 button.addEventListener('click', howMany);
 button.textContent = ("Click to begin"); 
 document.body.appendChild(button)
