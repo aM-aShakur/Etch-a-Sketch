@@ -1,14 +1,22 @@
 "use strict";
+// create a button that prompts the user
+// prompt determines the size of the grid
 const button = document.createElement('button');
+// get prompt from user
+// grid size can be anywhere between 1 - 50
 function howMany() {
-    const number = prompt("Give a number to determine the scale.");
-    if (Number(number) > 50) {
-        prompt('Number is to high please pick a number below 50.');
-    }
-    else
+    const result = prompt("Pick a number between:\n1 and 50\nFor the grid size.");
+    const number = Number(result);
+    if (number > 0 && number < 51) {
         console.log(number);
-    return Number(number);
+        return number;
+    }
+    if (number <= 0 || number > 50) {
+        return alert('Error:\nPick a number between\n1 and 50');
+    }
 }
+// add the func howMany to button
+// add the button to the dom
 button.addEventListener('click', howMany);
 button.textContent = ("Click to begin");
 document.body.appendChild(button);
